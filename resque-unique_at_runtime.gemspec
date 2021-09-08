@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'colorize', '>= 0.8'
-  spec.add_runtime_dependency 'resque', '>= 1.2'
+  spec.add_runtime_dependency 'resque', '2.0.0'
 
   spec.add_development_dependency 'byebug', '~> 11.1'
   spec.add_development_dependency 'fakeredis', '~> 0.7'
