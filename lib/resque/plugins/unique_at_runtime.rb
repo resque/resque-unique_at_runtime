@@ -43,8 +43,9 @@ module Resque
         # Overwrite this method to uniquely identify which mutex should be used
         # for a resque worker.
         def unique_at_runtime_redis_key(*_)
-          Resque::UniqueAtRuntime.debug("getting key for #{@queue}!")
-          @queue
+          queue = Resque.queue_from_class(self)
+          Resque::UniqueAtRuntime.debug("getting key for #{queue}!")
+          queue
         end
 
         # returns true if the job signature can be locked (is not currently locked)
