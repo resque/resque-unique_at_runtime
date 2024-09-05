@@ -71,9 +71,15 @@ module Resque
         end
 
         def unlock_queue(*args)
+          if @unlock_queue_executed
+            Resque::UniqueAtRuntime.debug('unlock queue already executed')
+            return
+          end
+
           key = unique_at_runtime_redis_key(*args)
           Resque::UniqueAtRuntime.debug("unlock queue with #{key}")
           Resque.redis.hdel(unique_at_runtime_key_base, key)
+          @unlock_queue_executed = true
         end
 
         def reenqueue(*args)
@@ -99,6 +105,8 @@ module Resque
         end
 
         def around_perform_unlock_runtime(*args)
+          @unlock_queue_executed = false
+
           yield
         ensure
           unlock_queue(*args)
