@@ -30,7 +30,12 @@ describe Resque::Plugins::UniqueAtRuntime do
   end
 
   describe ".runtime_requeue_interval" do
-    it "defaults to 5" do
+    before do
+      Resque::UniqueAtRuntime.configuration.requeue_interval = 1
+      SerialJob.remove_instance_variable(:@runtime_requeue_interval) if SerialJob.instance_variable_defined?(:@runtime_requeue_interval)
+    end
+
+    it "defaults to 1" do
       expect(SerialJob.runtime_requeue_interval).to eql(1)
     end
 
