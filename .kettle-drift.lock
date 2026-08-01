@@ -58,6 +58,15 @@
       ]
     }
   ],
+  "strategy: merge\npreference: destination": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        93,
+        107
+      ]
+    }
+  ],
   "| job 1       | job 2       | job 3       |         |\n+---------------------------------------------------+": [
     {
       "file": "README.md",
