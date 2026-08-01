@@ -1138,7 +1138,7 @@ files:
   spec/spec_helper.rb:
     recipe: template_source_application_spec_spec_helper_rb
     action: write
-    dest_sha256: 4914b72be3b3b2dd52f88c68f0e4c0584a5cb0a2e294039a598a8b3abcb7ce9b
+    dest_sha256: 429cfad99080cf940d3cec57773d57eaa7d11cfe35d78b08991e3146436979a8
     input_fingerprint: 48aa8ade9d490cd693065fc59d9f02972b5fde61ec79d6a514dc1b8dafb4228f
     template_sources:
     - spec/spec_helper.rb.example
