@@ -179,9 +179,6 @@
     [119, 7, 338, "RSpec/ExampleLength: Example has too many lines. [8/5]", 1219504266],
     [120, 16, 7, "RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.", 1892732441]
   ],
-  "spec/resque/unique_at_runtime/version_spec.rb:3667942760": [
-    [7, 3, 478, "RSpec/ExampleLength: Example has too many lines. [6/5]", 5803453]
-  ],
   "spec/spec_helper.rb:1210307223": [
     [47, 24, 14, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 379550510]
   ]

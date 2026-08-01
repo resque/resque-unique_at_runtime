@@ -440,7 +440,7 @@ See [LICENSE.md][📄license] for the official copyright notice.
 - Copyright (c) 2012-2014 Jonathan R. Wallace
 - Copyright (c) 2013 Tatsuhiko Miyagawa
 - Copyright (c) 2014 Lance Woodson
-- Copyright (c) 2017-2018, 2026 Peter Boling
+- Copyright (c) 2017-2018, 2026 Peter H. Boling
 - Copyright (c) 2020 Daniel Cunha
 - Copyright (c) 2024 jiikko
 
