@@ -1,4 +1,3 @@
-# coding: utf-8
 # frozen_string_literal: true
 
 module Resque
@@ -27,17 +26,17 @@ module Resque
 
         def runtime_lock_timeout
           instance_variable_get(:@runtime_lock_timeout) ||
-              instance_variable_set(:@runtime_lock_timeout, Resque::UniqueAtRuntime.configuration&.lock_timeout)
+            instance_variable_set(:@runtime_lock_timeout, Resque::UniqueAtRuntime.configuration&.lock_timeout)
         end
 
         def runtime_requeue_interval
           instance_variable_get(:@runtime_requeue_interval) ||
-              instance_variable_set(:@runtime_requeue_interval, Resque::UniqueAtRuntime.configuration&.requeue_interval)
+            instance_variable_set(:@runtime_requeue_interval, Resque::UniqueAtRuntime.configuration&.requeue_interval)
         end
 
         def unique_at_runtime_key_base
           instance_variable_get(:@unique_at_runtime_key_base) ||
-              instance_variable_set(:@unique_at_runtime_key_base, Resque::UniqueAtRuntime.configuration&.unique_at_runtime_key_base)
+            instance_variable_set(:@unique_at_runtime_key_base, Resque::UniqueAtRuntime.configuration&.unique_at_runtime_key_base)
         end
 
         # Overwrite this method to uniquely identify which mutex should be used
@@ -73,7 +72,7 @@ module Resque
 
         def unlock_queue(*args)
           if @unlock_queue_executed
-            Resque::UniqueAtRuntime.debug('unlock queue already executed')
+            Resque::UniqueAtRuntime.debug("unlock queue already executed")
             return
           end
 
@@ -100,7 +99,7 @@ module Resque
             # and don't perform
             raise Resque::Job::DontPerform
           else
-            Resque::UniqueAtRuntime.debug('check passed will perform')
+            Resque::UniqueAtRuntime.debug("check passed will perform")
             true
           end
         end
@@ -117,7 +116,7 @@ module Resque
         #   duplicates the on_failure unlock, but that's a small price to pay for
         #   uniqueness.
         def on_failure_unlock_runtime(*args)
-          Resque::UniqueAtRuntime.debug('on failure unlock')
+          Resque::UniqueAtRuntime.debug("on failure unlock")
           unlock_queue(*args)
         end
       end

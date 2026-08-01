@@ -1,0 +1,8 @@
+module Resque
+  module UniqueAtRuntime
+    module Version
+      VERSION: String
+    end
+    VERSION: String
+  end
+end

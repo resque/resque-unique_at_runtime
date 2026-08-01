@@ -41,7 +41,7 @@ Naming/HeredocDelimiterCase:
 # Offense count: 1
 # Configuration parameters: MinNameLength, AllowNamesEndingInNumbers, AllowedNames, ForbiddenNames.
 # AllowedNames: io, id, to, by, on, in, at, ip, db
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Exclude:
     - 'lib/resque/plugins/unique_at_runtime.rb'
 
@@ -71,5 +71,5 @@ Style/Semicolon:
 # Offense count: 26
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120

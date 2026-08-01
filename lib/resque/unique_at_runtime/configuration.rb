@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require 'logger'
+require "logger"
 module Resque
   module UniqueAtRuntime
     class Configuration
       DEFAULT_LOCK_TIMEOUT = 60 * 60 * 24 * 5
       DEFAULT_REQUEUE_INTERVAL = 1
-      DEFAULT_UNIQUE_AT_RUNTIME_KEY_BASE = 'r-uar'.freeze
+      DEFAULT_UNIQUE_AT_RUNTIME_KEY_BASE = "r-uar"
       DEFAULT_LOG_LEVEL = :debug
 
       include Singleton
 
       attr_accessor :debug_mode,
-                    :lock_timeout,
-                    :log_level,
-                    :logger,
-                    :requeue_interval,
-                    :unique_at_runtime_key_base
+        :lock_timeout,
+        :log_level,
+        :logger,
+        :requeue_interval,
+        :unique_at_runtime_key_base
 
       def initialize
         debug_mode_from_env
@@ -49,8 +49,8 @@ module Resque
       private
 
       def debug_mode_from_env
-        env_debug = ENV['RESQUE_DEBUG']
-        @debug_mode = !!(env_debug == 'true' || (env_debug.is_a?(String) && env_debug.match(/runtime/)))
+        env_debug = ENV["RESQUE_DEBUG"]
+        @debug_mode = !!(env_debug == "true" || (env_debug.is_a?(String) && env_debug.match(/runtime/)))
       end
     end
   end

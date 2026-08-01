@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'resque/unique_at_runtime/version'
+require "resque/unique_at_runtime/version"
 
 # Ruby Std Lib
-require 'digest/md5'
+require "digest/md5"
 
 # External Gems
-require 'colorized_string'
-require 'resque'
+require "colorized_string"
+require "resque"
 
 # This Gem
-require 'resque/plugins/unique_at_runtime'
-require 'resque/unique_at_runtime/resque_ext/resque'
-require 'resque/unique_at_runtime/configuration'
+require "resque/plugins/unique_at_runtime"
+require "resque/unique_at_runtime/resque_ext/resque"
+require "resque/unique_at_runtime/configuration"
 
 # See lib/resque/plugins/unique_at_runtime.rb for the actual plugin
 #
@@ -21,7 +21,7 @@ require 'resque/unique_at_runtime/configuration'
 #   Resque, Resque::Job, or Resque::Queue.
 module Resque
   module UniqueAtRuntime
-    PLUGIN_TAG = (ColorizedString['[R-UAR] '].blue).freeze
+    PLUGIN_TAG = (ColorizedString["[R-UAR] "].blue).freeze
 
     def log(message)
       configuration.logger&.send(configuration.log_level, message) if configuration.logger
@@ -44,6 +44,6 @@ module Resque
     self.configuration = Configuration.instance # setup defaults
 
     module_function(:log,
-                    :debug)
+      :debug)
   end
 end
