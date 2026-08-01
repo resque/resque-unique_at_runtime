@@ -97,4 +97,14 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://gitlab.com/resque/resque-unique_at_runtime/-/compare/HEAD
+## [4.0.1] - 2018-11-15
+
+- TAG: [v4.0.1][4.0.1t]
+
+### Changed
+
+- Historical release notes are unavailable in this changelog.
+
+[Unreleased]: https://github.com/resque/resque-unique_at_runtime/compare/v4.0.1...HEAD
+[4.0.1]: https://github.com/resque/resque-unique_at_runtime/compare/6f784fa7dd7863db4d6169ae7f9519880c1ccb41...v4.0.1
+[4.0.1t]: https://github.com/resque/resque-unique_at_runtime/releases/tag/v4.0.1
