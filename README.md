@@ -21,6 +21,10 @@ I've summarized my thoughts in [this blog post](https://dev.to/galtzo/hostile-ta
 
 ## 🌻 Synopsis <a href="https://discord.gg/3qme4XHNKN"><img alt="Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px.svg" width="8%" align="right"/></a> <a href="https://ruby-toolbox.com"><img alt="ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5" src="https://logos.galtzo.com/assets/images/ruby-lang/avatar-128px.svg" width="8%" align="right"/></a>
 
+`resque-unique_at_runtime` prevents more than one worker from performing the same class of work at once. A job including `Resque::Plugins::UniqueAtRuntime` obtains a Redis lock before `perform`; when the lock is held, the job is re-enqueued after a short delay.
+
+By default the uniqueness key is the Resque queue. Override `unique_at_runtime_redis_key(*args)` when uniqueness should be per account, tenant, or resource instead of per queue.
+
 ## 💡 Info you can shake a stick at
 
 | Tokens to Remember | [![Gem name][⛳️name-img]][⛳️gem-name] [![Gem namespace][⛳️namespace-img]][⛳️gem-namespace] |
@@ -118,6 +122,20 @@ gem install resque-unique_at_runtime
 ```
 
 ## ⚙️ Configuration
+
+Configure application defaults before workers start:
+
+```ruby
+Resque::UniqueAtRuntime.configure do |config|
+  config.lock_timeout = 5 * 24 * 60 * 60
+  config.requeue_interval = 1
+  config.unique_at_runtime_key_base = "r-uar"
+end
+```
+
+`lock_timeout` is the recovery timeout for a stale lock, so it must exceed the longest expected job duration. `requeue_interval` is the wait before a contested job is re-enqueued. Jobs may override these values with `@runtime_lock_timeout`, `@runtime_requeue_interval`, and `@unique_at_runtime_key_base`.
+
+Keep the key base global for the application. Set `RESQUE_DEBUG=true` (or a value containing `runtime`) to enable plugin debug logging.
 
 ## 🔧 Basic Usage
 
