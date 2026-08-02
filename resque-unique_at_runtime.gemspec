@@ -48,7 +48,6 @@ Gem::Specification.new do |spec|
 
   # Linux distros often package gems and securely certify them independent
   #   of the official RubyGem certification process. Allowed via ENV["SKIP_GEM_SIGNING"]
-  # Ref: https://gitlab.com/ruby-oauth/version_gem/-/issues/3
   # Hence, only enable signing if `SKIP_GEM_SIGNING` is not set in ENV.
   # See CONTRIBUTING.md
   unless ENV.include?("SKIP_GEM_SIGNING")
@@ -79,7 +78,7 @@ Gem::Specification.new do |spec|
   gemspec_root = __dir__
   relative_package_path = lambda do |path|
     prefix = "#{gemspec_root}/"
-    (path[0, prefix.length] == prefix) ? path[prefix.length..-1] : path
+    path[0, prefix.length] == prefix ? path[prefix.length..-1] : path
   end
   enumerate_package_glob = lambda do |glob|
     files = []
@@ -128,7 +127,6 @@ Gem::Specification.new do |spec|
   # Utilities
   spec.add_runtime_dependency "colorize", ">= 0.8"
   spec.add_runtime_dependency "resque", ">= 1.2"
-  spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.14")              # ruby >= 2.2.0
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased
   #       visibility and discoverability.
