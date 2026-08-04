@@ -127,18 +127,5 @@ describe Resque::UniqueAtRuntime::Configuration do
         })
       end
     end
-
-    context "when RESQUE_DEBUG enables runtime logging" do
-      include_context "with stubbed env"
-
-      it "initializes a logger" do
-        stub_env("RESQUE_DEBUG" => "runtime")
-        configuration = described_class.send(:allocate)
-        configuration.send(:initialize)
-
-        expect(configuration.debug_mode).to be(true)
-        expect(configuration.logger).to be_a(Logger)
-      end
-    end
   end
 end

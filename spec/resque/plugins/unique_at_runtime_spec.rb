@@ -51,10 +51,12 @@ describe Resque::Plugins::UniqueAtRuntime do
       SerialJob.remove_instance_variable(:@runtime_lock_timeout) if SerialJob.instance_variable_defined?(:@runtime_lock_timeout)
     end
 
+    # rubocop:disable RSpec/MultipleExpectations
     it "uses the configured timeout" do
       expect(SerialJob.runtime_lock_timeout).to eql(10)
       expect(SerialJob.runtime_lock_timeout_at(100)).to eql(111)
     end
+    # rubocop:enable RSpec/MultipleExpectations
 
     it "is overridable with a class instance var" do
       SerialJob.instance_variable_set(:@runtime_lock_timeout, 5)
@@ -106,12 +108,13 @@ describe Resque::Plugins::UniqueAtRuntime do
       expect(SerialJob.can_lock_queue?(:serial_work)).to eql(true)
 
       Timecop.travel(Date.today + 10) do
-        expect(SerialJob.can_lock_queue?(:serial_work)).to eql(true)
+        expect(SerialJob.can_lock_queue?(:serial_work)).to be(true)
       end
     end
 
+    # rubocop:disable RSpec/ExampleLength
     it "solves race condition with getset" do
-      expect(SerialJob.can_lock_queue?(:serial_work)).to eql(true)
+      expect(SerialJob.can_lock_queue?(:serial_work)).to be(true)
 
       Timecop.travel(Date.today + 10) do
         threads = (1..10).to_a.map do
@@ -128,6 +131,7 @@ describe Resque::Plugins::UniqueAtRuntime do
         expect(locks.count(true)).to eql(1)
       end
     end
+    # rubocop:enable RSpec/ExampleLength
   end
 
   describe ".unlock_queue" do
@@ -136,15 +140,18 @@ describe Resque::Plugins::UniqueAtRuntime do
       SerialJob.can_lock_queue?(:serial_work)
     end
 
+    # rubocop:disable RSpec/MultipleExpectations
     it "removes the lock and ignores duplicate unlocks" do
       SerialJob.unlock_queue(:serial_work)
 
       expect(Resque.redis.hget(SerialJob.unique_at_runtime_key_base, SerialJob.unique_at_runtime_redis_key(:serial_work))).to be_nil
       expect { SerialJob.unlock_queue(:serial_work) }.not_to raise_error
     end
+    # rubocop:enable RSpec/MultipleExpectations
   end
 
   describe ".around_perform_unlock_runtime" do
+    # rubocop:disable RSpec/MultipleExpectations
     it "unlocks when the wrapped operation raises" do
       SerialJob.can_lock_queue?(:serial_work)
 
@@ -154,6 +161,7 @@ describe Resque::Plugins::UniqueAtRuntime do
 
       expect(Resque.redis.hget(SerialJob.unique_at_runtime_key_base, SerialJob.unique_at_runtime_redis_key(:serial_work))).to be_nil
     end
+    # rubocop:enable RSpec/MultipleExpectations
   end
 
   describe ".on_failure_unlock_runtime" do
@@ -219,7 +227,7 @@ describe Resque::Plugins::UniqueAtRuntime do
         # perform returns false when DontPerform exception is raised in
         # before_perform callback
         job1 = Resque.reserve(:serial_work)
-        expect(job1.perform).to eql(false)
+        expect(job1.perform).to be(false)
 
         first_queue_element = Resque.reserve(:serial_work)
         expect(first_queue_element.payload["args"]).to eql([job2_payload])
@@ -267,7 +275,7 @@ describe Resque::Plugins::UniqueAtRuntime do
         # perform returns false when DontPerform exception is raised in
         # before_perform callback
         job1 = Resque.reserve(:serial_work)
-        expect(job1.perform).to eql(false)
+        expect(job1.perform).to be(false)
 
         first_queue_element = Resque.reserve(:serial_work)
         expect(first_queue_element.payload["args"]).to eql([job2_payload])

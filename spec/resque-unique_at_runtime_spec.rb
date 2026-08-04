@@ -49,7 +49,7 @@ describe Resque::UniqueAtRuntime do
       after do
         Resque::UniqueAtRuntime.configuration.debug_mode = @debug_mode
         Resque::UniqueAtRuntime.configuration.logger = @logger
-        Resque::UniqueAtRuntime.configuration.log_level = @log_level
+        described_class.configuration.log_level = @log_level
       end
 
       it("logs") do
@@ -110,23 +110,25 @@ describe Resque::UniqueAtRuntime do
       end
 
       it "does nothing without a logger" do
-        Resque::UniqueAtRuntime.configuration.logger = nil
+        described_class.configuration.logger = nil
 
         expect { described_class.debug("warbler") }.not_to raise_error
       end
     end
 
     context "with debug_mode => true and no logger" do
-      before do
-        @debug_mode = Resque::UniqueAtRuntime.configuration.debug_mode
-        @logger = Resque::UniqueAtRuntime.configuration.logger
-        Resque::UniqueAtRuntime.configuration.debug_mode = true
-        Resque::UniqueAtRuntime.configuration.logger = nil
-      end
-
-      after do
-        Resque::UniqueAtRuntime.configuration.debug_mode = @debug_mode
-        Resque::UniqueAtRuntime.configuration.logger = @logger
+      around do |example|
+        configuration = described_class.configuration
+        original_debug_mode = configuration.debug_mode
+        original_logger = configuration.logger
+        begin
+          configuration.debug_mode = true
+          configuration.logger = nil
+          example.run
+        ensure
+          configuration.debug_mode = original_debug_mode
+          configuration.logger = original_logger
+        end
       end
 
       it "does nothing without a logger" do
