@@ -29,6 +29,7 @@ require "rspec/block_is_expected"
 require "rspec/stubbed_env"
 require "resque"
 require "timecop"
+require "resque/unique_at_runtime"
 
 require "debug" if RbConfig::CONFIG["RUBY_INSTALL_NAME"] == "ruby" && Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.7")
 

@@ -45,7 +45,47 @@ describe Resque::Plugins::UniqueAtRuntime do
     end
   end
 
+  describe ".runtime_lock_timeout" do
+    before do
+      Resque::UniqueAtRuntime.configuration.lock_timeout = 10
+      SerialJob.remove_instance_variable(:@runtime_lock_timeout) if SerialJob.instance_variable_defined?(:@runtime_lock_timeout)
+    end
+
+    it "uses the configured timeout" do
+      expect(SerialJob.runtime_lock_timeout).to eql(10)
+      expect(SerialJob.runtime_lock_timeout_at(100)).to eql(111)
+    end
+
+    it "is overridable with a class instance var" do
+      SerialJob.instance_variable_set(:@runtime_lock_timeout, 5)
+
+      expect(SerialJob.runtime_lock_timeout).to eql(5)
+    end
+  end
+
+  describe ".unique_at_runtime_key_base" do
+    before do
+      Resque::UniqueAtRuntime.configuration.unique_at_runtime_key_base = "runtime-keys"
+      SerialJob.remove_instance_variable(:@unique_at_runtime_key_base) if SerialJob.instance_variable_defined?(:@unique_at_runtime_key_base)
+    end
+
+    it "uses the configured key base" do
+      expect(SerialJob.unique_at_runtime_key_base).to eql("runtime-keys")
+    end
+
+    it "is overridable with a class instance var" do
+      SerialJob.instance_variable_set(:@unique_at_runtime_key_base, "custom-runtime-keys")
+
+      expect(SerialJob.unique_at_runtime_key_base).to eql("custom-runtime-keys")
+    end
+  end
+
   describe ".can_lock_queue?" do
+    before do
+      Resque::UniqueAtRuntime.configuration.lock_timeout = Resque::UniqueAtRuntime::Configuration::DEFAULT_LOCK_TIMEOUT
+      SerialJob.remove_instance_variable(:@runtime_lock_timeout) if SerialJob.instance_variable_defined?(:@runtime_lock_timeout)
+    end
+
     it "can lock a queue" do
       expect(SerialJob.can_lock_queue?(:serial_work)).to eql(true)
     end
@@ -87,6 +127,49 @@ describe Resque::Plugins::UniqueAtRuntime do
         }
         expect(locks.count(true)).to eql(1)
       end
+    end
+  end
+
+  describe ".unlock_queue" do
+    before do
+      SerialJob.remove_instance_variable(:@unlock_queue_executed) if SerialJob.instance_variable_defined?(:@unlock_queue_executed)
+      SerialJob.can_lock_queue?(:serial_work)
+    end
+
+    it "removes the lock and ignores duplicate unlocks" do
+      SerialJob.unlock_queue(:serial_work)
+
+      expect(Resque.redis.hget(SerialJob.unique_at_runtime_key_base, SerialJob.unique_at_runtime_redis_key(:serial_work))).to be_nil
+      expect { SerialJob.unlock_queue(:serial_work) }.not_to raise_error
+    end
+  end
+
+  describe ".around_perform_unlock_runtime" do
+    it "unlocks when the wrapped operation raises" do
+      SerialJob.can_lock_queue?(:serial_work)
+
+      expect do
+        SerialJob.around_perform_unlock_runtime(:serial_work) { raise "failure" }
+      end.to raise_error("failure")
+
+      expect(Resque.redis.hget(SerialJob.unique_at_runtime_key_base, SerialJob.unique_at_runtime_redis_key(:serial_work))).to be_nil
+    end
+  end
+
+  describe ".on_failure_unlock_runtime" do
+    it "unlocks a failed job" do
+      SerialJob.remove_instance_variable(:@unlock_queue_executed) if SerialJob.instance_variable_defined?(:@unlock_queue_executed)
+      SerialJob.can_lock_queue?(:serial_work)
+
+      SerialJob.on_failure_unlock_runtime(:serial_work)
+
+      expect(Resque.redis.hget(SerialJob.unique_at_runtime_key_base, SerialJob.unique_at_runtime_redis_key(:serial_work))).to be_nil
+    end
+  end
+
+  describe "Resque.running?" do
+    it "delegates to the job lock check" do
+      expect(Resque.running?(SerialJob, :serial_work)).to be(false)
     end
   end
 

@@ -25,6 +25,12 @@ describe Resque::UniqueAtRuntime do
       expect(logger).to receive(:info).with("warbler")
       block_is_expected.not_to raise_error
     end
+
+    it "does nothing without a logger" do
+      Resque::UniqueAtRuntime.configuration.logger = nil
+
+      expect { described_class.log("warbler") }.not_to raise_error
+    end
   end
 
   describe ".debug" do
@@ -101,6 +107,30 @@ describe Resque::UniqueAtRuntime do
       it("does not logs") do
         expect(logger).not_to receive(:debug)
         block_is_expected.not_to raise_error
+      end
+
+      it "does nothing without a logger" do
+        Resque::UniqueAtRuntime.configuration.logger = nil
+
+        expect { described_class.debug("warbler") }.not_to raise_error
+      end
+    end
+
+    context "with debug_mode => true and no logger" do
+      before do
+        @debug_mode = Resque::UniqueAtRuntime.configuration.debug_mode
+        @logger = Resque::UniqueAtRuntime.configuration.logger
+        Resque::UniqueAtRuntime.configuration.debug_mode = true
+        Resque::UniqueAtRuntime.configuration.logger = nil
+      end
+
+      after do
+        Resque::UniqueAtRuntime.configuration.debug_mode = @debug_mode
+        Resque::UniqueAtRuntime.configuration.logger = @logger
+      end
+
+      it "does nothing without a logger" do
+        expect { described_class.debug("warbler") }.not_to raise_error
       end
     end
   end

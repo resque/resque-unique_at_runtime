@@ -65,9 +65,7 @@ module Resque
           previous_timeout = Resque.redis.hget(unique_at_runtime_key_base, key).to_i
           return key if previous_timeout > now
           Resque.redis.hset(unique_at_runtime_key_base, key, timeout)
-          return false if previous_timeout <= now
-
-          key
+          false
         end
 
         def unlock_queue(*args)
