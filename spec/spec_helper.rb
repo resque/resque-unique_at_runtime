@@ -31,7 +31,7 @@ require "resque"
 require "timecop"
 require "resque/unique_at_runtime"
 
-require "debug" if RbConfig::CONFIG["RUBY_INSTALL_NAME"] == "ruby" && Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.7")
+require "debug" if RbConfig::CONFIG["RUBY_INSTALL_NAME"] == "ruby" && Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.7") && ENV["CI"].nil? && ENV.fetch("DEBUG", "false").casecmp("true").zero?
 
 SimpleCov.start
 
