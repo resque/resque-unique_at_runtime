@@ -22,7 +22,7 @@
     [30, 34, 6, "Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.", 3356722952],
     [45, 7, 15, "Lint/DuplicateMethods: Method `Resque::UniqueAtRuntime::Configuration#debug_mode=` is defined at both lib/resque/unique_at_runtime/configuration.rb:14 and lib/resque/unique_at_runtime/configuration.rb:45.", 3724036658]
   ],
-  "resque-unique_at_runtime.gemspec:3159877870": [
+  "resque-unique_at_runtime.gemspec:3916023963": [
     [180, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 248795650],
     [186, 3, 41, "Gemspec/DependencyVersion: Dependency version specification is required.", 3258055162]
   ],

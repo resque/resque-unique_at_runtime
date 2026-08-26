@@ -186,7 +186,7 @@ GEM
       ruby-progressbar (~> 1.13)
       tty-progressbar (~> 0.18)
       version_gem (~> 1.1, >= 1.1.15)
-    kettle-jem (7.1.7)
+    kettle-jem (7.1.8)
       addressable (>= 2.8, < 3)
       ast-crispr-markdown-markly (~> 7.1, >= 7.1.4)
       ast-crispr-ruby-prism (~> 7.1, >= 7.1.4)
@@ -630,7 +630,7 @@ DEPENDENCIES
   irb (~> 1.17)
   kettle-changelog (~> 1.0, >= 1.0.3)
   kettle-dev (~> 3.0, >= 3.0.13)
-  kettle-family (~> 1.2, >= 1.2.61)
+  kettle-family (~> 1.2, >= 1.2.62)
   kettle-soup-cover (~> 3.0, >= 3.0.9)
   kettle-test (~> 2.0, >= 2.0.20)
   kramdown (~> 2.5, >= 2.5.2)
@@ -685,7 +685,7 @@ CHECKSUMS
   bash-merge (7.1.4) sha256=cd9eeebf368a638e72e432f1d80930077922e90cd98d8260a2c9bbd0933d21a7
   benchmark (0.5.0) sha256=465df122341aedcb81a2a24b4d3bd19b6c67c1530713fd533f3ff034e419236c
   bigdecimal (4.1.2) sha256=53d217666027eab4280346fba98e7d5b66baaae1b9c3c1c0ffe89d48188a3fbd
-  bundler (4.0.19) sha256=b48056e4c77fb3853cc47775b5447ede44aaa4f53c32f168014ab4fe86587d47
+  bundler (4.0.17) sha256=214e21431b5665dd2f99df8a5511c6b151d7a72e8015c8b38f8b775b61cbb6c1
   bundler-audit (0.9.3) sha256=81c8766c71e47d0d28a0f98c7eed028539f21a6ea3cd8f685eb6f42333c9b4e9
   cgi (0.5.2) sha256=61ca30298171190fd4fa0d8018e57ada456eae9b7a2b78526debf7f0a0e6f8bb
   citrus (3.0.2) sha256=4ec2412fc389ad186735f4baee1460f7900a8e130ffe3f216b30d4f9c684f650
@@ -734,7 +734,7 @@ CHECKSUMS
   kettle-dev (3.0.13) sha256=131f23898ff9dc1aa7066c1a4f6c2ecf5b56c67e0cbda503e90d42103a8891c6
   kettle-family (1.2.62) sha256=839fd741de89a9e01dbb00d62ddf34e1a6fd63270d1dcd24ad79109278737f55
   kettle-gha-pins (0.3.13) sha256=c393aa90a7c78248d42fd63b2f4abfb0ca39df94a7b0d8f53082fa3ffdaa3f80
-  kettle-jem (7.1.7) sha256=68c441b76e855c9e8f5c4046868f79569922391271e615721fcf9030111257cb
+  kettle-jem (7.1.8) sha256=928b2b4a75c052db7504d9778e6b2180bc5424a0bdd5853ab5d47a2b68185a27
   kettle-ndjson (0.1.12) sha256=9c506b197c1b95904227876890a5b1a55a5f435f1c425857036e7fab83d152e5
   kettle-rb (0.1.10) sha256=98fadfb0baf6a655132e651079bd4e499135b9db10e2c751212739b06b9acb01
   kettle-soup-cover (3.0.9) sha256=32e3dbb6b15ad46d1ff7ef141597061b686bbfbfa2af71e7fe2e50d47c35f4e7
@@ -879,4 +879,4 @@ CHECKSUMS
   zlib (3.2.3) sha256=5bd316698b32f31a64ab910a8b6c282442ca1626a81bbd6a1674e8522e319c20
 
 BUNDLED WITH
-  4.0.19
+  4.0.17
