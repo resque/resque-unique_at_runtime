@@ -161,8 +161,6 @@ files:
 # Default (when key is absent): all three engines.
 engines:
   - ruby
-  - jruby
-  - truffleruby
 
 # Ruby version policy.
 ruby:
