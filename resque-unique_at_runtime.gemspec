@@ -20,7 +20,7 @@ gem_version =
 Gem::Specification.new do |spec|
   spec.name = "resque-unique_at_runtime"
   spec.version = gem_version
-  spec.authors = ["Peter H. Boling", "Jonathan R. Wallace"]
+  spec.authors = ["Peter H. Boling", "Jonathan R. Wallace", "Tatsuhiko Miyagawa", "Lance Woodson", "Daniel Cunha", "jiikko"]
   spec.email = ["floss@galtzo.com"]
 
   spec.summary = "💎 A resque plugin that ensures job uniqueness at runtime."
@@ -78,7 +78,7 @@ Gem::Specification.new do |spec|
   gemspec_root = __dir__
   relative_package_path = lambda do |path|
     prefix = "#{gemspec_root}/"
-    (path[0, prefix.length] == prefix) ? path[prefix.length..-1] : path
+    path[0, prefix.length] == prefix ? path[prefix.length..-1] : path
   end
   enumerate_package_glob = lambda do |glob|
     files = []
