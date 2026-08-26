@@ -2,9 +2,6 @@
   "Rakefile:512290781": [
     [168, 1, 16, "Rake/Desc: Describe the task with `desc` method.", 850263259]
   ],
-  "gemfiles/modular/templating.gemfile:3018447732": [
-    [14, 3, 47, "Bundler/DuplicatedGem: Gem `tree_sitter_language_pack` requirements already given on line 10 of the Gemfile.", 3843603197]
-  ],
   "lib/resque-unique_at_runtime.rb:2279581013": [
     [24, 18, 34, "Style/RedundantParentheses: Don't use parentheses around a method call.", 2422313271],
     [27, 7, 84, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 3761788843],
@@ -25,7 +22,7 @@
     [30, 34, 6, "Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.", 3356722952],
     [45, 7, 15, "Lint/DuplicateMethods: Method `Resque::UniqueAtRuntime::Configuration#debug_mode=` is defined at both lib/resque/unique_at_runtime/configuration.rb:14 and lib/resque/unique_at_runtime/configuration.rb:45.", 3724036658]
   ],
-  "resque-unique_at_runtime.gemspec:1916189539": [
+  "resque-unique_at_runtime.gemspec:3159877870": [
     [180, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 248795650],
     [186, 3, 41, "Gemspec/DependencyVersion: Dependency version specification is required.", 3258055162]
   ],
@@ -180,7 +177,7 @@
     [119, 7, 338, "RSpec/ExampleLength: Example has too many lines. [8/5]", 1219504266],
     [120, 16, 7, "RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.", 1892732441]
   ],
-  "spec/spec_helper.rb:2805213250": [
+  "spec/spec_helper.rb:1013065863": [
     [46, 24, 14, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 379550510]
   ]
 }
