@@ -28,9 +28,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- kettle-jem-template-20260720-004 - MRI-only projects now omit JRuby and
-  TruffleRuby workflow jobs.
-
 ### Security
 
 ## [4.0.2] - 2026-08-26
@@ -83,6 +80,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - kettle-jem-template-20260720-003 - StructuredMerge Git diff driver config now
   uses the installed `smorg-rb` driver command.
+- kettle-jem-template-20260725-001 - Release pull request branches beginning
+  with `feature/release` now run JRuby and TruffleRuby workflows.
 - kettle-jem-template-20260726-002 - Generated version files now document their
   version namespace and constants, reducing warning-only YARD lint output.
 - kettle-jem-template-20260726-003 - Coverage upload steps now treat Coveralls,
@@ -91,6 +90,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260728-002 - Generated RuboCop configs now ignore the
   same `gemfiles/vendor/bundle` tree as `.gitignore`, so vendored dependency
   installs are not reported as project lint debt.
+- kettle-jem-template-20260728-003 - Generated dep-heads workflows now run
+  TruffleRuby jobs with current RubyGems and Bundler, avoiding setup failures
+  before the test suite starts.
 - kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the
   setup-ruby Bundler install path for direct appraisal Gemfiles, avoiding rv
   lockfile parser failures on Git and path dependencies.
