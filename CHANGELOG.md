@@ -28,6 +28,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Non-coverage appraisal specs no longer invoke SimpleCov when coverage is disabled.
+
 ### Security
 
 ## [4.0.2] - 2026-08-26

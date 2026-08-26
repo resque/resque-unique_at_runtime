@@ -33,8 +33,6 @@ require "resque/unique_at_runtime"
 
 require "debug" if RbConfig::CONFIG["RUBY_INSTALL_NAME"] == "ruby" && Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.7") && ENV["CI"].nil? && ENV.fetch("DEBUG", "false").casecmp("true").zero?
 
-SimpleCov.start
-
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
