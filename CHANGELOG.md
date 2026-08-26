@@ -28,8 +28,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Non-coverage appraisal specs no longer invoke SimpleCov when coverage is disabled.
-
 ### Security
 
 ## [4.0.2] - 2026-08-26
@@ -125,6 +123,8 @@ Please file a bug if you notice a violation of semantic versioning.
   preserving comments and trailing commas during template updates.
 
 - Generated gemspec author metadata now includes all non-machine copyright holders.
+
+- Non-coverage appraisal specs no longer invoke SimpleCov when coverage is disabled.
 
 ## [4.0.1] - 2018-11-15
 

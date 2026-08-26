@@ -177,7 +177,7 @@
     [119, 7, 338, "RSpec/ExampleLength: Example has too many lines. [8/5]", 1219504266],
     [120, 16, 7, "RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.", 1892732441]
   ],
-  "spec/spec_helper.rb:1013065863": [
-    [46, 24, 14, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 379550510]
+  "spec/spec_helper.rb:3124312509": [
+    [44, 24, 14, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 379550510]
   ]
 }
