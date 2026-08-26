@@ -28,6 +28,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.
+
 ### Security
 
 ## [4.0.2] - 2026-08-26
