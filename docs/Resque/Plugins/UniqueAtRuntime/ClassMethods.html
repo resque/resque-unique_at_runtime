@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Resque::Plugins::UniqueAtRuntime::ClassMethods
+  
+    &mdash; Documentation by YARD 0.9.45
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
+
+<script type="text/javascript">
+  pathId = "Resque::Plugins::UniqueAtRuntime::ClassMethods";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Plugins.html" title="Resque::Plugins (module)">Plugins</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../UniqueAtRuntime.html" title="Resque::Plugins::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span>
+     &raquo; 
+    <span class="title">ClassMethods</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Resque::Plugins::UniqueAtRuntime::ClassMethods
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/resque/plugins/unique_at_runtime.rb
+</dd>
+  </dl>
+  
+</div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#around_perform_unlock_runtime-instance_method" title="#around_perform_unlock_runtime (instance method)">#<strong>around_perform_unlock_runtime</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#before_perform_lock_runtime-instance_method" title="#before_perform_lock_runtime (instance method)">#<strong>before_perform_lock_runtime</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#can_lock_queue%3F-instance_method" title="#can_lock_queue? (instance method)">#<strong>can_lock_queue?</strong>(*args)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns true if the job signature can be locked (is not currently locked).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_failure_unlock_runtime-instance_method" title="#on_failure_unlock_runtime (instance method)">#<strong>on_failure_unlock_runtime</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>There may be scenarios where the around_perform’s ensure unlock±   duplicates the on_failure unlock, but that’s a small price to pay for   uniqueness.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#queue_locked%3F-instance_method" title="#queue_locked? (instance method)">#<strong>queue_locked?</strong>(*args)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns the locking key if locked, otherwise false.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reenqueue-instance_method" title="#reenqueue (instance method)">#<strong>reenqueue</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#runtime_lock_timeout-instance_method" title="#runtime_lock_timeout (instance method)">#<strong>runtime_lock_timeout</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#runtime_lock_timeout_at-instance_method" title="#runtime_lock_timeout_at (instance method)">#<strong>runtime_lock_timeout_at</strong>(now)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#runtime_requeue_interval-instance_method" title="#runtime_requeue_interval (instance method)">#<strong>runtime_requeue_interval</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unique_at_runtime_key_base-instance_method" title="#unique_at_runtime_key_base (instance method)">#<strong>unique_at_runtime_key_base</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unique_at_runtime_redis_key-instance_method" title="#unique_at_runtime_redis_key (instance method)">#<strong>unique_at_runtime_redis_key</strong>(*_)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Overwrite this method to uniquely identify which mutex should be used for a resque worker.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unlock_queue-instance_method" title="#unlock_queue (instance method)">#<strong>unlock_queue</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+    
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="around_perform_unlock_runtime-instance_method">
+  
+    #<strong>around_perform_unlock_runtime</strong>(*args)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_around_perform_unlock_runtime'>around_perform_unlock_runtime</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='ivar'>@unlock_queue_executed</span> <span class='op'>=</span> <span class='kw'>false</span>
+
+  <span class='kw'>yield</span>
+<span class='kw'>ensure</span>
+  <span class='id identifier rubyid_unlock_queue'>unlock_queue</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="before_perform_lock_runtime-instance_method">
+  
+    #<strong>before_perform_lock_runtime</strong>(*args)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_before_perform_lock_runtime'>before_perform_lock_runtime</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='id identifier rubyid_queue_locked?'>queue_locked?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>failed to lock queue with </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+    <span class='comment'># Sleep so the CPU&#39;s rest
+</span>    <span class='id identifier rubyid_sleep'>sleep</span><span class='lparen'>(</span><span class='id identifier rubyid_runtime_requeue_interval'>runtime_requeue_interval</span><span class='rparen'>)</span>
+
+    <span class='comment'># can&#39;t get the lock, so re-enqueue the task
+</span>    <span class='id identifier rubyid_reenqueue'>reenqueue</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+
+    <span class='comment'># and don&#39;t perform
+</span>    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'>Job</span><span class='op'>::</span><span class='const'>DontPerform</span>
+  <span class='kw'>else</span>
+    <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>check passed will perform</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>true</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="can_lock_queue?-instance_method">
+  
+    #<strong>can_lock_queue?</strong>(*args)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns true if the job signature can be locked (is not currently locked)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_can_lock_queue?'>can_lock_queue?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='op'>!</span><span class='id identifier rubyid_queue_locked?'>queue_locked?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_failure_unlock_runtime-instance_method">
+  
+    #<strong>on_failure_unlock_runtime</strong>(*args)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>There may be scenarios where the around_perform’s ensure unlock±<br />
+  duplicates the on_failure unlock, but that’s a small price to pay for<br />
+  uniqueness.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 116</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_on_failure_unlock_runtime'>on_failure_unlock_runtime</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>on failure unlock</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_unlock_queue'>unlock_queue</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="queue_locked?-instance_method">
+  
+    #<strong>queue_locked?</strong>(*args)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns the locking key if locked, otherwise false</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_queue_locked?'>queue_locked?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_now'>now</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='id identifier rubyid_unique_at_runtime_redis_key'>unique_at_runtime_redis_key</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_timeout'>timeout</span> <span class='op'>=</span> <span class='id identifier rubyid_runtime_lock_timeout_at'>runtime_lock_timeout_at</span><span class='lparen'>(</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
+
+  <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>attempting to lock queue with </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+  <span class='comment'># Per http://redis.io/commands/hsetnx
+</span>  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_redis'>redis</span><span class='period'>.</span><span class='id identifier rubyid_hsetnx'>hsetnx</span><span class='lparen'>(</span><span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_previous_timeout'>previous_timeout</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_redis'>redis</span><span class='period'>.</span><span class='id identifier rubyid_hget'>hget</span><span class='lparen'>(</span><span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_key'>key</span> <span class='kw'>if</span> <span class='id identifier rubyid_previous_timeout'>previous_timeout</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_now'>now</span>
+  <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_redis'>redis</span><span class='period'>.</span><span class='id identifier rubyid_hset'>hset</span><span class='lparen'>(</span><span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='rparen'>)</span>
+  <span class='kw'>false</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reenqueue-instance_method">
+  
+    #<strong>reenqueue</strong>(*args)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reenqueue'>reenqueue</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_enqueue'>enqueue</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="runtime_lock_timeout-instance_method">
+  
+    #<strong>runtime_lock_timeout</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_runtime_lock_timeout'>runtime_lock_timeout</span>
+  <span class='id identifier rubyid_instance_variable_get'>instance_variable_get</span><span class='lparen'>(</span><span class='symbol'>:@runtime_lock_timeout</span><span class='rparen'>)</span> <span class='op'>||</span>
+    <span class='id identifier rubyid_instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@runtime_lock_timeout</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_configuration'><span class='object_link'><a href="../../UniqueAtRuntime.html#configuration-class_method" title="Resque::UniqueAtRuntime.configuration (method)">configuration</a></span></span><span class='op'>&amp;.</span><span class='id identifier rubyid_lock_timeout'>lock_timeout</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="runtime_lock_timeout_at-instance_method">
+  
+    #<strong>runtime_lock_timeout_at</strong>(now)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_runtime_lock_timeout_at'>runtime_lock_timeout_at</span><span class='lparen'>(</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_now'>now</span> <span class='op'>+</span> <span class='id identifier rubyid_runtime_lock_timeout'>runtime_lock_timeout</span> <span class='op'>+</span> <span class='int'>1</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="runtime_requeue_interval-instance_method">
+  
+    #<strong>runtime_requeue_interval</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_runtime_requeue_interval'>runtime_requeue_interval</span>
+  <span class='id identifier rubyid_instance_variable_get'>instance_variable_get</span><span class='lparen'>(</span><span class='symbol'>:@runtime_requeue_interval</span><span class='rparen'>)</span> <span class='op'>||</span>
+    <span class='id identifier rubyid_instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@runtime_requeue_interval</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_configuration'><span class='object_link'><a href="../../UniqueAtRuntime.html#configuration-class_method" title="Resque::UniqueAtRuntime.configuration (method)">configuration</a></span></span><span class='op'>&amp;.</span><span class='id identifier rubyid_requeue_interval'>requeue_interval</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unique_at_runtime_key_base-instance_method">
+  
+    #<strong>unique_at_runtime_key_base</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span>
+  <span class='id identifier rubyid_instance_variable_get'>instance_variable_get</span><span class='lparen'>(</span><span class='symbol'>:@unique_at_runtime_key_base</span><span class='rparen'>)</span> <span class='op'>||</span>
+    <span class='id identifier rubyid_instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@unique_at_runtime_key_base</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_configuration'><span class='object_link'><a href="../../UniqueAtRuntime.html#configuration-class_method" title="Resque::UniqueAtRuntime.configuration (method)">configuration</a></span></span><span class='op'>&amp;.</span><span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unique_at_runtime_redis_key-instance_method">
+  
+    #<strong>unique_at_runtime_redis_key</strong>(*_)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Overwrite this method to uniquely identify which mutex should be used<br />
+for a resque worker.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unique_at_runtime_redis_key'>unique_at_runtime_redis_key</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid__'>_</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_queue'>queue</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_queue_from_class'>queue_from_class</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>getting key for </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_queue'>queue</span><span class='embexpr_end'>}</span><span class='tstring_content'>!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_queue'>queue</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="unlock_queue-instance_method">
+  
+    #<strong>unlock_queue</strong>(*args)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unlock_queue'>unlock_queue</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='ivar'>@unlock_queue_executed</span>
+    <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unlock queue already executed</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='id identifier rubyid_unique_at_runtime_redis_key'>unique_at_runtime_redis_key</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unlock queue with </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_redis'>redis</span><span class='period'>.</span><span class='id identifier rubyid_hdel'>hdel</span><span class='lparen'>(</span><span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
+  <span class='ivar'>@unlock_queue_executed</span> <span class='op'>=</span> <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Wed Aug 26 10:52:04 2026 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.45 (ruby-4.0.6).
+</div>
+
+    </div>
+  </body>
+</html>
