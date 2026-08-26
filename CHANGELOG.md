@@ -28,6 +28,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.
+
 ### Security
 
 ## [4.0.2] - 2026-08-26
