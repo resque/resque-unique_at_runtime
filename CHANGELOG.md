@@ -22,6 +22,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Remove the GPL-2.0 colorize runtime dependency from logging output.
+
 ### Deprecated
 
 ### Removed
@@ -29,6 +31,8 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 - Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.
+
+- Atomically replace expired runtime locks through Redis while retaining compatibility with older Redis clients and test doubles.
 
 ### Security
 

@@ -112,8 +112,34 @@ describe Resque::Plugins::UniqueAtRuntime do
       end
     end
 
+    context "when Redis supports the atomic lock script" do
+      it "reports a newly acquired lock as available" do
+        redis = instance_double(Redis, eval: 1)
+        allow(Resque).to receive(:redis).and_return(redis)
+
+        expect(SerialJob.can_lock_queue?(:serial_work)).to be(true)
+      end
+
+      it "reports an active lock as unavailable" do
+        redis = instance_double(Redis, eval: 0)
+        allow(Resque).to receive(:redis).and_return(redis)
+
+        expect(SerialJob.can_lock_queue?(:serial_work)).to be(false)
+      end
+    end
+
+    it "falls back when Redis does not implement the atomic lock script" do
+      redis = instance_double(Redis)
+      allow(redis).to receive(:eval).and_raise(NotImplementedError)
+      allow(redis).to receive(:hsetnx).and_return(true)
+      allow(Resque).to receive(:redis).and_return(redis)
+
+      expect(SerialJob.can_lock_queue?(:serial_work)).to be(true)
+    end
+
     # rubocop:disable RSpec/ExampleLength
-    it "solves race condition with getset" do
+    # rubocop:disable RSpec/MultipleExpectations
+    it "atomically replaces an expired lock" do
       expect(SerialJob.can_lock_queue?(:serial_work)).to be(true)
 
       Timecop.travel(Date.today + 10) do
@@ -131,6 +157,7 @@ describe Resque::Plugins::UniqueAtRuntime do
         expect(locks.count(true)).to eql(1)
       end
     end
+    # rubocop:enable RSpec/MultipleExpectations
     # rubocop:enable RSpec/ExampleLength
   end
 

@@ -11,7 +11,6 @@ PATH
   remote: .
   specs:
     resque-unique_at_runtime (4.0.2)
-      colorize (>= 0.8)
       resque (>= 1.2)
 
 GEM
@@ -68,7 +67,6 @@ GEM
       toml-rb (~> 4.1)
       version_gem (~> 1.1, >= 1.1.15)
     cmdparse (3.0.7)
-    colorize (1.1.0)
     colsole (1.0.1)
     command_kit (0.6.0)
     command_kit-completion (0.3.0)
@@ -684,7 +682,6 @@ CHECKSUMS
   citrus (3.0.2) sha256=4ec2412fc389ad186735f4baee1460f7900a8e130ffe3f216b30d4f9c684f650
   citrus-toml-merge (7.1.4) sha256=78440225c661dfcf4fe9ccd907daa05136db11e58488e078f2ed0b8c96f2ace1
   cmdparse (3.0.7) sha256=f7c5cace10bec6abf853370ae095e4b97a84ed9d847b3fb38f41cc4fbc950739
-  colorize (1.1.0) sha256=30b5237f0603f6662ab8d1fc2bd4a96142b806c6415d79e45ef5fdc6a0cfc837
   colsole (1.0.1) sha256=7632a300ace2db877c024ffe413c684954cf37e41264b75ace9f456c9d657b02
   command_kit (0.6.0) sha256=e57f29cf5aee4f571c210041d910ff87f85749e42dfe75139c57cc93d84afa90
   command_kit-completion (0.3.0) sha256=d9c498555125bcdd0c9d869f2a64a25a2f0205102a7f28c81c7937ae633ea737

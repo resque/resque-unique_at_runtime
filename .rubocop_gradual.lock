@@ -2,28 +2,27 @@
   "Rakefile:512290781": [
     [168, 1, 16, "Rake/Desc: Describe the task with `desc` method.", 850263259]
   ],
-  "lib/resque-unique_at_runtime.rb:2279581013": [
-    [24, 18, 34, "Style/RedundantParentheses: Don't use parentheses around a method call.", 2422313271],
-    [27, 7, 84, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 3761788843],
-    [41, 7, 28, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 3570445562]
+  "lib/resque-unique_at_runtime.rb:314524479": [
+    [26, 7, 84, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 3761788843],
+    [40, 7, 28, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 3570445562]
   ],
-  "lib/resque/plugins/unique_at_runtime.rb:3609693480": [
-    [28, 11, 45, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2584366923],
-    [29, 13, 98, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 212246325],
-    [33, 11, 49, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3716376034],
-    [34, 13, 106, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 1473579349],
-    [38, 11, 51, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3057524831],
-    [39, 13, 118, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 959601974],
-    [72, 14, 22, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 842817375],
-    [80, 11, 22, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 842817375],
-    [106, 11, 22, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 842817375]
+  "lib/resque/plugins/unique_at_runtime.rb:3934938608": [
+    [38, 11, 45, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2584366923],
+    [39, 13, 98, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 212246325],
+    [43, 11, 49, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3716376034],
+    [44, 13, 106, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 1473579349],
+    [48, 11, 51, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3057524831],
+    [49, 13, 118, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 959601974],
+    [114, 14, 22, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 842817375],
+    [122, 11, 22, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 842817375],
+    [148, 11, 22, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 842817375]
   ],
   "lib/resque/unique_at_runtime/configuration.rb:1522889051": [
     [30, 34, 6, "Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.", 3356722952],
     [45, 7, 15, "Lint/DuplicateMethods: Method `Resque::UniqueAtRuntime::Configuration#debug_mode=` is defined at both lib/resque/unique_at_runtime/configuration.rb:14 and lib/resque/unique_at_runtime/configuration.rb:45.", 3724036658]
   ],
-  "resque-unique_at_runtime.gemspec:746046467": [
-    [184, 3, 41, "Gemspec/DependencyVersion: Dependency version specification is required.", 3258055162]
+  "resque-unique_at_runtime.gemspec:2871688882": [
+    [183, 3, 41, "Gemspec/DependencyVersion: Dependency version specification is required.", 3258055162]
   ],
   "spec/resque-unique_at_runtime_spec.rb:452559069": [
     [5, 1, 32, "RSpec/SpecFilePathFormat: Spec path should end with `resque/unique_at_runtime*_spec.rb`.", 2206473303],
@@ -81,7 +80,7 @@
     [107, 7, 19, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 1010856102],
     [108, 31, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `logger` as a spy using `allow` or `instance_spy`.", 1384559950]
   ],
-  "spec/resque/plugins/unique_at_runtime_spec.rb:2028800298": [
+  "spec/resque/plugins/unique_at_runtime_spec.rb:2794240933": [
     [20, 26, 6, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2764263348],
     [39, 53, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
     [44, 53, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
@@ -97,37 +96,36 @@
     [103, 60, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
     [107, 5, 41, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 1852471206],
     [108, 58, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
-    [116, 5, 38, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 4031860600],
-    [121, 11, 10, "ThreadSafety/NewThread: Avoid starting new threads.", 3411682361],
-    [131, 38, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
-    [190, 7, 31, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 2332297491],
-    [194, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
-    [194, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [197, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [202, 7, 54, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 200665986],
-    [206, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
-    [206, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [209, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
-    [209, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [212, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [219, 7, 70, "RSpec/MultipleExpectations: Example has too many expectations [3/1].", 1715322465],
-    [219, 7, 712, "RSpec/ExampleLength: Example has too many lines. [9/5]", 1546257128],
-    [225, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
-    [225, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [238, 7, 31, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 2332297491],
-    [242, 9, 35, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 389807891],
-    [242, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [245, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [250, 7, 54, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 200665986],
-    [254, 9, 35, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 389807891],
-    [254, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [257, 9, 35, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 389807891],
-    [257, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [260, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
-    [267, 7, 70, "RSpec/MultipleExpectations: Example has too many expectations [3/1].", 1715322465],
-    [267, 7, 766, "RSpec/ExampleLength: Example has too many lines. [9/5]", 637261864],
-    [273, 9, 35, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 389807891],
-    [273, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950]
+    [147, 11, 10, "ThreadSafety/NewThread: Avoid starting new threads.", 3411682361],
+    [157, 38, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
+    [217, 7, 31, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 2332297491],
+    [221, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
+    [221, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [224, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [229, 7, 54, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 200665986],
+    [233, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
+    [233, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [236, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
+    [236, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [239, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [246, 7, 70, "RSpec/MultipleExpectations: Example has too many expectations [3/1].", 1715322465],
+    [246, 7, 712, "RSpec/ExampleLength: Example has too many lines. [9/5]", 1546257128],
+    [252, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
+    [252, 30, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJob` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [265, 7, 31, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 2332297491],
+    [269, 9, 35, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 389807891],
+    [269, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [272, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [277, 7, 54, "RSpec/MultipleExpectations: Example has too many expectations [4/1].", 200665986],
+    [281, 9, 35, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 389807891],
+    [281, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [284, 9, 35, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 389807891],
+    [284, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [287, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950],
+    [294, 7, 70, "RSpec/MultipleExpectations: Example has too many expectations [3/1].", 1715322465],
+    [294, 7, 766, "RSpec/ExampleLength: Example has too many lines. [9/5]", 637261864],
+    [300, 9, 35, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 389807891],
+    [300, 48, 7, "RSpec/MessageSpies: Prefer `have_received` for setting message expectations. Setup `SerialJobWithCustomRedisKey` as a spy using `allow` or `instance_spy`.", 1384559950]
   ],
   "spec/resque/unique_at_runtime/configuration_spec.rb:4184857493": [
     [6, 3, 3598, "RSpec/MultipleMemoizedHelpers: Example group has too many memoized helpers [7/5]", 943490244],

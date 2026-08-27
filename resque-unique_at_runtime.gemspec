@@ -125,7 +125,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Utilities
-  spec.add_runtime_dependency "colorize", ">= 0.8"
   spec.add_runtime_dependency "resque", ">= 1.2"
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased

@@ -15,6 +15,16 @@ module Resque
     #   end
     #
     module UniqueAtRuntime
+      ATOMIC_LOCK_SCRIPT = <<~LUA
+        local previous_timeout = redis.call("HGET", KEYS[1], ARGV[1])
+        if previous_timeout and tonumber(previous_timeout) > tonumber(ARGV[3]) then
+          return 0
+        end
+        redis.call("HSET", KEYS[1], ARGV[1], ARGV[2])
+        return 1
+      LUA
+      LEGACY_LOCK_MUTEX = Mutex.new
+
       def self.included(base)
         base.extend ClassMethods
       end
@@ -60,13 +70,45 @@ module Resque
 
           Resque::UniqueAtRuntime.debug("attempting to lock queue with #{key}")
 
-          # Per http://redis.io/commands/hsetnx
-          return false if Resque.redis.hsetnx(unique_at_runtime_key_base, key, timeout)
-          previous_timeout = Resque.redis.hget(unique_at_runtime_key_base, key).to_i
-          return key if previous_timeout > now
-          Resque.redis.hset(unique_at_runtime_key_base, key, timeout)
-          false
+          case atomic_lock_result(key, timeout, now)
+          when 1
+            false
+          when 0
+            key
+          else
+            legacy_queue_locked(key, timeout, now)
+          end
         end
+
+        private
+
+        def atomic_lock_result(key, timeout, now)
+          result = Resque.redis.eval(
+            Resque::Plugins::UniqueAtRuntime::ATOMIC_LOCK_SCRIPT,
+            [unique_at_runtime_key_base],
+            [key, timeout, now]
+          )
+          result&.to_i
+        rescue NoMethodError, NotImplementedError, Redis::CommandError
+          nil
+        end
+
+        # FakeRedis 0.9 exposes EVAL without implementing it. Keep the old
+        # command path for that test double and older Redis clients; the mutex
+        # only makes this compatibility path deterministic within one process.
+        def legacy_queue_locked(key, timeout, now)
+          Resque::Plugins::UniqueAtRuntime::LEGACY_LOCK_MUTEX.synchronize do
+            return false if Resque.redis.hsetnx(unique_at_runtime_key_base, key, timeout)
+
+            previous_timeout = Resque.redis.hget(unique_at_runtime_key_base, key).to_i
+            return key if previous_timeout > now
+
+            Resque.redis.hset(unique_at_runtime_key_base, key, timeout)
+            false
+          end
+        end
+
+        public
 
         def unlock_queue(*args)
           if @unlock_queue_executed

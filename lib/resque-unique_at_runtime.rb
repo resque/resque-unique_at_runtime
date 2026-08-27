@@ -6,7 +6,6 @@ require "resque/unique_at_runtime/version"
 require "digest/md5"
 
 # External Gems
-require "colorized_string"
 require "resque"
 
 # This Gem
@@ -21,7 +20,7 @@ require "resque/unique_at_runtime/configuration"
 #   Resque, Resque::Job, or Resque::Queue.
 module Resque
   module UniqueAtRuntime
-    PLUGIN_TAG = (ColorizedString["[R-UAR] "].blue).freeze
+    PLUGIN_TAG = "[R-UAR] "
 
     def log(message)
       configuration.logger&.send(configuration.log_level, message) if configuration.logger
