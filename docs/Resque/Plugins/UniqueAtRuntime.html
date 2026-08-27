@@ -117,6 +117,34 @@ end   end
   
 </p>
 
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="ATOMIC_LOCK_SCRIPT-constant" class="">ATOMIC_LOCK_SCRIPT =
+          
+        </dt>
+        <dd><pre class="code"><span class='heredoc_beg'>&lt;&lt;~LUA</span>
+<span class='tstring_content'>  local previous_timeout = redis.call(&quot;HGET&quot;, KEYS[1], ARGV[1])
+</span><span class='tstring_content'>  if previous_timeout and tonumber(previous_timeout) &gt; tonumber(ARGV[3]) then
+</span><span class='tstring_content'>    return 0
+</span><span class='tstring_content'>  end
+</span><span class='tstring_content'>  redis.call(&quot;HSET&quot;, KEYS[1], ARGV[1], ARGV[2])
+</span><span class='tstring_content'>  return 1
+</span><span class='heredoc_end'>LUA</span></pre></dd>
+      
+        <dt id="LEGACY_LOCK_MUTEX-constant" class="">LEGACY_LOCK_MUTEX =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Mutex</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -179,12 +207,12 @@ end   end
       <pre class="lines">
 
 
-18
-19
-20</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_extend'>extend</span> <span class='const'><span class='object_link'><a href="UniqueAtRuntime/ClassMethods.html" title="Resque::Plugins::UniqueAtRuntime::ClassMethods (module)">ClassMethods</a></span></span>

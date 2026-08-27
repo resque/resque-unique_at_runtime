@@ -84,15 +84,15 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
-<h2 id="402---2026-08-26">
-<a href="https://github.com/resque/resque-unique_at_runtime/compare/v4.0.1...v4.0.2">4.0.2</a> - 2026-08-26</h2>
+<h2 id="402---2026-08-27">
+<a href="https://github.com/resque/resque-unique_at_runtime/compare/v4.0.1...v4.0.2">4.0.2</a> - 2026-08-27</h2>
 
 <ul>
   <li>TAG: <a href="https://github.com/resque/resque-unique_at_runtime/releases/tag/v4.0.2">v4.0.2</a>
 </li>
-  <li>COVERAGE: 99.12% – 113/114 lines in 6 files</li>
-  <li>BRANCH COVERAGE: 83.33% – 20/24 branches in 6 files</li>
-  <li>47.50% documented</li>
+  <li>COVERAGE: 99.21% – 126/127 lines in 6 files</li>
+  <li>BRANCH COVERAGE: 86.21% – 25/29 branches in 6 files</li>
+  <li>45.24% documented</li>
 </ul>
 
 <h3 id="added-1">Added</h3>
@@ -144,6 +144,7 @@ use ClickGems instead of BestGems.</p>
       <li>workflows (30)</li>
     </ul>
   </li>
+  <li>Remove the GPL-2.0 colorize runtime dependency from logging output.</li>
 </ul>
 
 <h3 id="fixed-1">Fixed</h3>
@@ -204,7 +205,13 @@ preserving comments and trailing commas during template updates.</p>
   <li>
     <p>Non-coverage appraisal specs no longer invoke SimpleCov when coverage is disabled.</p>
   </li>
-  <li>Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.</li>
+  <li>
+    <p>Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.</p>
+  </li>
+  <li>
+    <p>Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.</p>
+  </li>
+  <li>Atomically replace expired runtime locks through Redis while retaining compatibility with older Redis clients and test doubles.</li>
 </ul>
 
 <h2 id="401---2018-11-15">

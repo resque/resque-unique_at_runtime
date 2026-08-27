@@ -22,26 +22,20 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- Remove the GPL-2.0 colorize runtime dependency from logging output.
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
-- Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.
-
-- Atomically replace expired runtime locks through Redis while retaining compatibility with older Redis clients and test doubles.
-
 ### Security
 
-## [4.0.2] - 2026-08-26
+## [4.0.2] - 2026-08-27
 
 - TAG: [v4.0.2][4.0.2t]
-- COVERAGE: 99.12% -- 113/114 lines in 6 files
-- BRANCH COVERAGE: 83.33% -- 20/24 branches in 6 files
-- 47.50% documented
+- COVERAGE: 99.21% -- 126/127 lines in 6 files
+- BRANCH COVERAGE: 86.21% -- 25/29 branches in 6 files
+- 45.24% documented
 
 ### Added
 
@@ -81,6 +75,8 @@ Please file a bug if you notice a violation of semantic versioning.
   - documentation (2)
   - other (4)
   - workflows (30)
+
+- Remove the GPL-2.0 colorize runtime dependency from logging output.
 
 ### Fixed
 
@@ -133,6 +129,10 @@ Please file a bug if you notice a violation of semantic versioning.
 - Non-coverage appraisal specs no longer invoke SimpleCov when coverage is disabled.
 
 - Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.
+
+- Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.
+
+- Atomically replace expired runtime locks through Redis while retaining compatibility with older Redis clients and test doubles.
 
 ## [4.0.1] - 2018-11-15
 

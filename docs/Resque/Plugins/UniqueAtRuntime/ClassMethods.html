@@ -402,16 +402,16 @@
       <pre class="lines">
 
 
-105
-106
-107
-108
-109
-110
-111</pre>
+147
+148
+149
+150
+151
+152
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 147</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_around_perform_unlock_runtime'>around_perform_unlock_runtime</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='ivar'>@unlock_queue_executed</span> <span class='op'>=</span> <span class='kw'>false</span>
@@ -440,26 +440,26 @@
       <pre class="lines">
 
 
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103</pre>
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 129</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_before_perform_lock_runtime'>before_perform_lock_runtime</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='id identifier rubyid_queue_locked?'>queue_locked?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -521,12 +521,12 @@
       <pre class="lines">
 
 
-51
-52
-53</pre>
+61
+62
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 61</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_can_lock_queue?'>can_lock_queue?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='op'>!</span><span class='id identifier rubyid_queue_locked?'>queue_locked?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
@@ -563,13 +563,13 @@
       <pre class="lines">
 
 
-116
-117
-118
-119</pre>
+158
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_failure_unlock_runtime'>on_failure_unlock_runtime</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>on failure unlock</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -618,23 +618,25 @@
       <pre class="lines">
 
 
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
 66
 67
 68
-69</pre>
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_queue_locked?'>queue_locked?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_now'>now</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
@@ -643,12 +645,14 @@
 
   <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../UniqueAtRuntime.html" title="Resque::UniqueAtRuntime (module)">UniqueAtRuntime</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug'><span class='object_link'><a href="../../UniqueAtRuntime.html#debug-class_method" title="Resque::UniqueAtRuntime.debug (method)">debug</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>attempting to lock queue with </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
-  <span class='comment'># Per http://redis.io/commands/hsetnx
-</span>  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_redis'>redis</span><span class='period'>.</span><span class='id identifier rubyid_hsetnx'>hsetnx</span><span class='lparen'>(</span><span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_previous_timeout'>previous_timeout</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_redis'>redis</span><span class='period'>.</span><span class='id identifier rubyid_hget'>hget</span><span class='lparen'>(</span><span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_key'>key</span> <span class='kw'>if</span> <span class='id identifier rubyid_previous_timeout'>previous_timeout</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_now'>now</span>
-  <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_redis'>redis</span><span class='period'>.</span><span class='id identifier rubyid_hset'>hset</span><span class='lparen'>(</span><span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='rparen'>)</span>
-  <span class='kw'>false</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_atomic_lock_result'>atomic_lock_result</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='comma'>,</span> <span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='int'>1</span>
+    <span class='kw'>false</span>
+  <span class='kw'>when</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_key'>key</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_legacy_queue_locked'>legacy_queue_locked</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='comma'>,</span> <span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -670,12 +674,12 @@
       <pre class="lines">
 
 
-83
-84
-85</pre>
+125
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reenqueue'>reenqueue</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_enqueue'>enqueue</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
@@ -700,13 +704,13 @@
       <pre class="lines">
 
 
-27
-28
-29
-30</pre>
+37
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_runtime_lock_timeout'>runtime_lock_timeout</span>
   <span class='id identifier rubyid_instance_variable_get'>instance_variable_get</span><span class='lparen'>(</span><span class='symbol'>:@runtime_lock_timeout</span><span class='rparen'>)</span> <span class='op'>||</span>
@@ -732,12 +736,12 @@
       <pre class="lines">
 
 
-23
-24
-25</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_runtime_lock_timeout_at'>runtime_lock_timeout_at</span><span class='lparen'>(</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_now'>now</span> <span class='op'>+</span> <span class='id identifier rubyid_runtime_lock_timeout'>runtime_lock_timeout</span> <span class='op'>+</span> <span class='int'>1</span>
@@ -762,13 +766,13 @@
       <pre class="lines">
 
 
-32
-33
-34
-35</pre>
+42
+43
+44
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_runtime_requeue_interval'>runtime_requeue_interval</span>
   <span class='id identifier rubyid_instance_variable_get'>instance_variable_get</span><span class='lparen'>(</span><span class='symbol'>:@runtime_requeue_interval</span><span class='rparen'>)</span> <span class='op'>||</span>
@@ -794,13 +798,13 @@
       <pre class="lines">
 
 
-37
-38
-39
-40</pre>
+47
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unique_at_runtime_key_base'>unique_at_runtime_key_base</span>
   <span class='id identifier rubyid_instance_variable_get'>instance_variable_get</span><span class='lparen'>(</span><span class='symbol'>:@unique_at_runtime_key_base</span><span class='rparen'>)</span> <span class='op'>||</span>
@@ -837,14 +841,14 @@ for a resque worker.</p>
       <pre class="lines">
 
 
-44
-45
-46
-47
-48</pre>
+54
+55
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unique_at_runtime_redis_key'>unique_at_runtime_redis_key</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid__'>_</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_queue'>queue</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Resque.html" title="Resque (module)">Resque</a></span></span><span class='period'>.</span><span class='id identifier rubyid_queue_from_class'>queue_from_class</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
@@ -871,20 +875,20 @@ for a resque worker.</p>
       <pre class="lines">
 
 
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81</pre>
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/resque/plugins/unique_at_runtime.rb', line 113</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unlock_queue'>unlock_queue</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='ivar'>@unlock_queue_executed</span>
