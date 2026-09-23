@@ -1,12 +1,42 @@
 {
   "Rakefile:512290781": [
+    [59, 70, 6, "Lint/LtsRuby/UnavailableMethod: Pathname#empty? is unavailable before Ruby 2.4.", 1165546895],
+    [74, 8, 4, "Lint/LtsRuby/UnavailableMethod: Enumerable/Enumerator::Lazy#uniq is unavailable before Ruby 2.4.", 2087995782],
     [168, 1, 16, "Rake/Desc: Describe the task with `desc` method.", 850263259]
+  ],
+  "gemfiles/modular/coverage_local.gemfile:2661471746": [
+    [19, 27, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002],
+    [37, 101, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002],
+    [46, 5, 5, "Lint/LtsRuby/UnavailableMethod: Thread#fetch is unavailable before Ruby 2.5.", 171106201],
+    [49, 31, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002]
+  ],
+  "gemfiles/modular/documentation_local.gemfile:3227795705": [
+    [19, 27, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002]
+  ],
+  "gemfiles/modular/style_local.gemfile:3577728394": [
+    [22, 27, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002]
+  ],
+  "gemfiles/modular/templating.gemfile:960605653": [
+    [6, 39, 4, "Lint/LtsRuby/UnavailableMethod: Set#to_s is unavailable before Ruby 2.5.", 2087961426],
+    [7, 28, 6, "Lint/LtsRuby/UnavailableMethod: Pathname#empty? is unavailable before Ruby 2.4.", 1165546895],
+    [8, 40, 4, "Lint/LtsRuby/UnavailableMethod: Set#to_s is unavailable before Ruby 2.5.", 2087961426],
+    [8, 45, 6, "Lint/LtsRuby/UnavailableMethod: Pathname#empty? is unavailable before Ruby 2.4.", 1165546895],
+    [11, 35, 4, "Lint/LtsRuby/UnavailableMethod: Set#to_s is unavailable before Ruby 2.5.", 2087961426],
+    [11, 40, 6, "Lint/LtsRuby/UnavailableMethod: Pathname#empty? is unavailable before Ruby 2.4.", 1165546895]
+  ],
+  "gemfiles/modular/templating_local.gemfile:1318235891": [
+    [20, 27, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002],
+    [85, 101, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002],
+    [94, 5, 5, "Lint/LtsRuby/UnavailableMethod: Thread#fetch is unavailable before Ruby 2.5.", 171106201],
+    [97, 31, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002]
   ],
   "lib/resque-unique_at_runtime.rb:314524479": [
     [26, 7, 84, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 3761788843],
     [40, 7, 28, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 3570445562]
   ],
   "lib/resque/plugins/unique_at_runtime.rb:3934938608": [
+    [34, 15, 1, "Lint/LtsRuby/UnavailableMethod: Enumerator#+ is unavailable before Ruby 2.6.", 177550],
+    [34, 38, 1, "Lint/LtsRuby/UnavailableMethod: Enumerator#+ is unavailable before Ruby 2.6.", 177550],
     [38, 11, 45, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2584366923],
     [39, 13, 98, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 212246325],
     [43, 11, 49, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3716376034],
@@ -19,9 +49,26 @@
   ],
   "lib/resque/unique_at_runtime/configuration.rb:1522889051": [
     [30, 34, 6, "Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.", 3356722952],
-    [45, 7, 15, "Lint/DuplicateMethods: Method `Resque::UniqueAtRuntime::Configuration#debug_mode=` is defined at both lib/resque/unique_at_runtime/configuration.rb:14 and lib/resque/unique_at_runtime/configuration.rb:45.", 3724036658]
+    [45, 7, 15, "Lint/DuplicateMethods: Method `Resque::UniqueAtRuntime::Configuration#debug_mode=` is defined at both lib/resque/unique_at_runtime/configuration.rb:14 and lib/resque/unique_at_runtime/configuration.rb:45.", 3724036658],
+    [53, 87, 5, "Lint/LtsRuby/UnavailableMethod: MatchData#match is unavailable before Ruby 3.1.", 174531222]
   ],
-  "resque-unique_at_runtime.gemspec:2871688882": [
+  "resque-unique_at_runtime.gemspec:2622385825": [
+    [60, 24, 9, "Lint/LtsRuby/UnavailableMethod: Symbol#end_with? is unavailable before Ruby 2.7.", 308216808],
+    [66, 16, 16, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 3147164910],
+    [67, 16, 19, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 279056797],
+    [68, 16, 17, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 4196512528],
+    [69, 16, 19, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 3960302181],
+    [70, 16, 21, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 2359681088],
+    [70, 78, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002],
+    [71, 16, 15, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 1629595435],
+    [72, 16, 12, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 2962383854],
+    [73, 16, 12, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 3248034781],
+    [73, 71, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002],
+    [74, 16, 15, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 1397552598],
+    [75, 16, 20, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 2025055014],
+    [76, 16, 25, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 1727630048],
+    [88, 13, 2, "Lint/LtsRuby/UnavailableMethod: Method/Proc#<< is unavailable before Ruby 2.6.", 5859461],
+    [113, 13, 4, "Lint/LtsRuby/UnavailableMethod: Symbol#name is unavailable before Ruby 3.0.", 2087876002],
     [183, 3, 41, "Gemspec/DependencyVersion: Dependency version specification is required.", 3258055162]
   ],
   "spec/resque-unique_at_runtime_spec.rb:452559069": [
@@ -93,10 +140,15 @@
     [97, 58, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
     [100, 5, 41, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 3736040607],
     [101, 58, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
+    [102, 33, 1, "Lint/LtsRuby/UnavailableMethod: Enumerator#+ is unavailable before Ruby 2.6.", 177550],
     [103, 60, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
     [107, 5, 41, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 1852471206],
     [108, 58, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
+    [110, 33, 1, "Lint/LtsRuby/UnavailableMethod: Enumerator#+ is unavailable before Ruby 2.6.", 177550],
+    [145, 33, 1, "Lint/LtsRuby/UnavailableMethod: Enumerator#+ is unavailable before Ruby 2.6.", 177550],
     [147, 11, 10, "ThreadSafety/NewThread: Avoid starting new threads.", 3411682361],
+    [148, 27, 9, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 321616019],
+    [154, 13, 4, "Lint/LtsRuby/UnavailableMethod: Set#join is unavailable before Ruby 3.0.", 2088000679],
     [157, 38, 3, "RSpec/BeEql: Prefer `be` over `eql`.", 193405885],
     [217, 7, 31, "RSpec/MultipleExpectations: Example has too many expectations [2/1].", 2332297491],
     [221, 9, 17, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 507636028],
