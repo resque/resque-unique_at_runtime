@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Peter H. Boling", "Jonathan R. Wallace", "Tatsuhiko Miyagawa", "Lance Woodson", "Daniel Cunha", "jiikko"]
   spec.email = ["floss@galtzo.com"]
 
-  spec.summary = "💎 A resque plugin that ensures job uniqueness at runtime."
+  spec.summary = "🏃 A resque plugin that ensures job uniqueness at runtime."
   spec.description = <<~desc
     Ensures that for a given queue, only one worker is working on a job at any given time.
 
@@ -78,7 +78,7 @@ Gem::Specification.new do |spec|
   gemspec_root = __dir__
   relative_package_path = lambda do |path|
     prefix = "#{gemspec_root}/"
-    (path[0, prefix.length] == prefix) ? path[prefix.length..-1] : path
+    path[0, prefix.length] == prefix ? path[prefix.length..-1] : path
   end
   enumerate_package_glob = lambda do |glob|
     files = []
@@ -124,6 +124,7 @@ Gem::Specification.new do |spec|
   spec.executables = []
   spec.require_paths = ["lib"]
 
+  # Utilities
   spec.add_runtime_dependency "resque", ">= 1.2"
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased
