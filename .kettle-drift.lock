@@ -8,6 +8,25 @@
       ]
     }
   ],
+  "- ruby: \"ruby\"\nappraisal: \"current\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        40,
+        46,
+        52
+      ]
+    }
+  ],
+  "bundler: latest\n- ruby: \"ruby\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        45,
+        51
+      ]
+    }
+  ],
   "class StrictlySerialJob\ninclude Resque::Plugins::UniqueAtRuntime": [
     {
       "file": "README.md",
