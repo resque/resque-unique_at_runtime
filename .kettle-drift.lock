@@ -3,8 +3,8 @@
     {
       "file": "README.md",
       "lines": [
-        215,
-        259
+        199,
+        243
       ]
     }
   ],
@@ -12,18 +12,8 @@
     {
       "file": ".github/workflows/current.yml",
       "lines": [
-        40,
-        46,
-        52
-      ]
-    }
-  ],
-  "bundler: latest\n- ruby: \"ruby\"": [
-    {
-      "file": ".github/workflows/current.yml",
-      "lines": [
-        45,
-        51
+        41,
+        47
       ]
     }
   ],
@@ -31,9 +21,18 @@
     {
       "file": "README.md",
       "lines": [
-        167,
-        186,
-        287
+        151,
+        170,
+        271
+      ]
+    }
+  ],
+  "config: .licenserc.yaml\nmode: \"check\"": [
+    {
+      "file": ".github/workflows/license-eye.yml",
+      "lines": [
+        49,
+        62
       ]
     }
   ],
@@ -41,8 +40,17 @@
     {
       "file": ".github/workflows/current.yml",
       "lines": [
-        43,
-        49
+        44,
+        50
+      ]
+    }
+  ],
+  "out != \"\" { print > out }\n' \"$bundle\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        95,
+        124
       ]
     }
   ],
@@ -55,12 +63,21 @@
       ]
     }
   ],
+  "subject=\"$(openssl x509 -in \"$file\" -noout -subject 2>/dev/null || true)\"\nif [ -n \"$subject\" ] && matches \"$subject\"; then": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        103,
+        127
+      ]
+    }
+  ],
   "| job 1       | job 2       | job 3       |         |\n+---------------------------------------------------+": [
     {
       "file": "README.md",
       "lines": [
-        222,
-        266
+        206,
+        250
       ]
     }
   ]
